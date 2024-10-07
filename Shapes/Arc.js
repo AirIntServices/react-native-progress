@@ -1,7 +1,6 @@
 /* eslint new-cap: ["error", { "capIsNew": false }] */
 
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { ART } from 'react-native';
 
 const CIRCLE = Math.PI * 2;
@@ -41,18 +40,6 @@ function makeArcPath(x, y, startAngleArg, endAngleArg, radius, direction) {
 }
 
 export default class Arc extends Component {
-  static propTypes = {
-    startAngle: PropTypes.number.isRequired, // in radians
-    endAngle: PropTypes.number.isRequired, // in radians
-    radius: PropTypes.number.isRequired,
-    offset: PropTypes.shape({
-      top: PropTypes.number,
-      left: PropTypes.number,
-    }),
-    strokeCap: PropTypes.string,
-    strokeWidth: PropTypes.number,
-    direction: PropTypes.oneOf(['clockwise', 'counter-clockwise']),
-  };
 
   static defaultProps = {
     startAngle: 0,

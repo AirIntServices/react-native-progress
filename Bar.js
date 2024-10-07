@@ -1,34 +1,11 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { Animated, Easing, View, ViewPropTypes } from 'react-native';
+import { Animated, Easing, View } from 'react-native';
 
 const INDETERMINATE_WIDTH_FACTOR = 0.3;
 const BAR_WIDTH_ZERO_POSITION =
   INDETERMINATE_WIDTH_FACTOR / (1 + INDETERMINATE_WIDTH_FACTOR);
 
-const RNViewPropTypes = ViewPropTypes || View.propTypes;
-
 export default class ProgressBar extends Component {
-  static propTypes = {
-    animated: PropTypes.bool,
-    animateIncreaseOnly: PropTypes.bool,
-    borderColor: PropTypes.string,
-    borderRadius: PropTypes.number,
-    borderWidth: PropTypes.number,
-    children: PropTypes.node,
-    color: PropTypes.string,
-    height: PropTypes.number,
-    indeterminate: PropTypes.bool,
-    onLayout: PropTypes.func,
-    progress: PropTypes.number,
-    style: RNViewPropTypes.style,
-    unfilledColor: PropTypes.string,
-    width: PropTypes.number,
-    useNativeDriver: PropTypes.bool,
-    // eslint-disable-next-line react/forbid-prop-types
-    animationConfig: PropTypes.object.isRequired,
-    animationType: PropTypes.oneOf(['decay', 'timing', 'spring']),
-  };
 
   static defaultProps = {
     animated: true,

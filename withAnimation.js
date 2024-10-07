@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import {
   Animated,
   Easing,
@@ -12,12 +11,6 @@ export default function withAnimation(WrappedComponent, indeterminateProgress) {
 
   return class AnimatedComponent extends Component {
     static displayName = `withAnimation(${wrappedComponentName})`;
-    static propTypes = {
-      animated: PropTypes.bool,
-      direction: PropTypes.oneOf(['clockwise', 'counter-clockwise']),
-      indeterminate: PropTypes.bool,
-      progress: PropTypes.number.isRequired,
-    };
 
     static defaultProps = {
       animated: true,

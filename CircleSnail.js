@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import {
   Animated,
   ART,
   Easing,
   View,
-  ViewPropTypes,
 } from 'react-native';
 
 import Arc from './Shapes/Arc';
@@ -15,25 +13,8 @@ const AnimatedArc = Animated.createAnimatedComponent(Arc);
 const MIN_ARC_ANGLE = 0.1;
 const MAX_ARC_ANGLE = 1.5 * Math.PI;
 
-const RNViewPropTypes = ViewPropTypes || View.propTypes;
 
 export default class CircleSnail extends Component {
-  static propTypes = {
-    animating: PropTypes.bool,
-    color: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.arrayOf(PropTypes.string),
-    ]),
-    children: PropTypes.node,
-    direction: PropTypes.oneOf(['clockwise', 'counter-clockwise']),
-    duration: PropTypes.number,
-    hidesWhenStopped: PropTypes.bool,
-    size: PropTypes.number,
-    spinDuration: PropTypes.number,
-    style: RNViewPropTypes.style,
-    thickness: PropTypes.number,
-    strokeCap: PropTypes.string
-  };
 
   static defaultProps = {
     animating: true,

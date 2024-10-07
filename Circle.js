@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import {
   Animated,
   ART,
   StyleSheet,
   Text,
-  View,
-  ViewPropTypes,
+  View
 } from 'react-native';
 
 import Arc from './Shapes/Arc';
@@ -17,8 +15,6 @@ const CIRCLE = Math.PI * 2;
 const AnimatedSurface = Animated.createAnimatedComponent(ART.Surface);
 const AnimatedArc = Animated.createAnimatedComponent(Arc);
 
-const RNViewPropTypes = ViewPropTypes || View.propTypes;
-
 const styles = StyleSheet.create({
   container: {
     backgroundColor: 'transparent',
@@ -27,27 +23,6 @@ const styles = StyleSheet.create({
 });
 
 export class ProgressCircle extends Component {
-  static propTypes = {
-    animated: PropTypes.bool,
-    borderColor: PropTypes.string,
-    borderWidth: PropTypes.number,
-    color: PropTypes.string,
-    children: PropTypes.node,
-    direction: PropTypes.oneOf(['clockwise', 'counter-clockwise']),
-    formatText: PropTypes.func,
-    indeterminate: PropTypes.bool,
-    progress: PropTypes.oneOfType([
-      PropTypes.number,
-      PropTypes.instanceOf(Animated.Value),
-    ]),
-    rotation: PropTypes.instanceOf(Animated.Value),
-    showsText: PropTypes.bool,
-    size: PropTypes.number,
-    style: RNViewPropTypes.style,
-    textStyle: Text.propTypes.style,
-    thickness: PropTypes.number,
-    unfilledColor: PropTypes.string,
-  };
 
   static defaultProps = {
     borderWidth: 1,
